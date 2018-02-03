@@ -5,7 +5,7 @@
 using namespace std;
 using namespace cv;
 
-int returnkrdepadosi(Mat A, int i, int j)
+int returnkrdepadosi(Mat& A, int i, int j)
 {
 	int numberofaliveneighbors = 0;
 
@@ -114,7 +114,7 @@ Mat gimmeinitialrawdata(int r, int c, int p)
 
 
 
-Mat GOL(Mat INPUT)
+Mat GOL(Mat& INPUT)
 {
 	int rows = INPUT.rows;
 	int cols = INPUT.cols;
@@ -176,16 +176,16 @@ int main()
 {
 	srand(time(NULL));
 	int rows, columns, perct, noi;
-	/*cout << "Enter the number of rows: " << endl;
+	cout << "Enter the number of rows: " << endl;
 	cin >> rows;
 	cout << "Enter the number of columns: " << endl;
 	cin >> columns;
 	cout << "Enter the number of perect fill: " << endl;
-	cin >> perct;*/
-	rows = 300;
-	columns = 300;
-	perct = 10;
-	noi = 10000;
+	cin >> perct;
+	cout << "Enter the number of iterations " << endl;
+	cin >> noi;
+
+	
 
 	Mat I = gimmeinitialrawdata(rows, columns, perct);
 	namedWindow("Game of Life", CV_WINDOW_NORMAL);
