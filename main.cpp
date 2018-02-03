@@ -1,6 +1,7 @@
 #include<opencv2\opencv.hpp>
 #include<iostream>
 #include<ctime>
+#include<string>
 
 using namespace std;
 using namespace cv;
@@ -191,6 +192,7 @@ int main()
 	namedWindow("Game of Life", CV_WINDOW_NORMAL);
 	for (int i = 0; i < noi; i++)
 	{
+		imwrite(to_string(i)+ ".png", I);
 		imshow("Game of Life", I);
 		I = GOL(I);
 		waitKey(1);
